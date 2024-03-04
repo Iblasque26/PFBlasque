@@ -4,3 +4,9 @@ import * as fromInscriptions from './inscriptions.reducer';
 export const selectInscriptionsState = createFeatureSelector<fromInscriptions.State>(
   fromInscriptions.inscriptionsFeatureKey
 );
+
+
+export const selectInscriptions = createSelector(
+  selectInscriptionsState,
+  (state) => state.inscriptions
+);
