@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nombre": "Ignacio",
+      "apellido": "Blasque",
+      "mail": "ignabl@gmail.com",
+      "provincia": "Buenos Aires",
+      "curso": "Angular",
+      "password": "123456",
+      "role": "ADMIN",
+      "token": "abcde1"
+    },
+    {
+      "id": "2",
+      "nombre": "Luffy",
+      "apellido": "Monkey",
+      "mail": "nakama@gmail.com",
+      "provincia": "Dawn",
+      "curso": "Js",
+      "password": "123456",
+      "role": "USER",
+      "token": "abcde2"
+    }
+  ],
+  "courses": [
+    {
+        "id": 1,
+        "cursoNombre": "Angular",
+        "createdAt": "2024-03-03T21:37:51.162Z"
+    }
+  ],
+  "inscriptions": [
+    {
+      "id": 1,
+      "userId": "1",
+      "courseId": 1
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<button mat-raised-button color="primary" (click)="openUsersDialog()" class="m-5">
+  <mat-icon>person_add</mat-icon> Nuevo Usuario
+</button>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreCompleto">
+    <mat-header-cell *matHeaderCellDef>Nombre Completo</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user | nombreCompleto}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="mail">
+    <mat-header-cell *matHeaderCellDef>Mail</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user.mail}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="provincia">
+    <mat-header-cell *matHeaderCellDef>Provincia</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user.provincia}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="curso">
+    <mat-header-cell *matHeaderCellDef>Curso</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user.curso}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="rol">
+    <mat-header-cell *matHeaderCellDef>Rol</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{user.role}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let user">
+      <button [routerLink]="user.id" routerLinkActive="router-link-active" class="p-1 m-2" mat-icon-button
+        color="accent"><mat-icon>visibility</mat-icon></button>
+      <button class="p-1 m-2 w-5" mat-raised-button color="primary"
+        (click)="onEditUser(user)"><mat-icon>border_color</mat-icon></button>
+      <button class="p-1 m-2 w-5" mat-raised-button color="warn"
+        (click)="abrirElimDialog(user)"><mat-icon>delete</mat-icon></button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator
+(page)="onPage($event)"
+ [length]="totalItems"
+ [pageSize]="pagesize"
+ [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page">
+</mat-paginator>

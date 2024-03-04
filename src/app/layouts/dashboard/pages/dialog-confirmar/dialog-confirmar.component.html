@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+    <p>¿Estás seguro de que deseas eliminar el usuario {{ user.nombre }} {{ user.apellido }}?</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onClose()">Cancelar</button>
+    <button mat-button color="warn" (click)="onConfirm()">Eliminar</button>
+  </div>

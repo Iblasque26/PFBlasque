@@ -1,0 +1,18 @@
+<div class="container mat-elevation-z8">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Detalles del usuario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div *ngIf="user">
+          <p><strong>ID:</strong> {{ user.id }}</p>
+          <p><strong>Nombre:</strong> {{ user.nombre }}</p>
+          <p><strong>Apellido:</strong> {{ user.apellido }}</p>
+          <p><strong>Email:</strong> {{ user.mail }}</p>
+          <p><strong>Provincia:</strong> {{ user.provincia }}</p>
+          <p><strong>Curso:</strong> {{ user.curso }}</p>
+          <p><strong>Rol:</strong> {{ user.role }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
