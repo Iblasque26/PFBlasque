@@ -59,4 +59,8 @@ paginate(page: number, perPage = 5) {
     return this.httpClient.delete<User>(`${enviroment.apiURL}/users/${userID}`)
   }
 
+getAllUsers(): Observable<User[]> {
+  return this.httpClient.get<User[]>(`${enviroment.apiURL}/users?role=USER`)
+}
+
 }

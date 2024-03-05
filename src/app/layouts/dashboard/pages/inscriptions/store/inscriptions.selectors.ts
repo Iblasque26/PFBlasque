@@ -10,3 +10,13 @@ export const selectInscriptions = createSelector(
   selectInscriptionsState,
   (state) => state.inscriptions
 );
+
+export const selectInscriptionUser = createSelector(
+  selectInscriptionsState,
+  (state) => state.users
+)
+
+export const selectInscriptionCurso = createSelector(
+  selectInscriptionsState,
+  (state) => state.cursos
+)

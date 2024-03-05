@@ -21,18 +21,40 @@
       "password": "123456",
       "role": "USER",
       "token": "abcde2"
+    },
+    {
+      "id": "9070",
+      "nombre": "Joaquin",
+      "apellido": "Blasque",
+      "mail": "joacobl@gmail.com",
+      "provincia": "Cordoba",
+      "role": "ADMIN",
+      "curso": "React",
+      "password": "",
+      "token": " xsKbt8kuzPBNeLZ"
+    },
+    {
+      "id": "96e9",
+      "nombre": "Zoro",
+      "apellido": "Roronoa",
+      "mail": "onigiri@gmail.com",
+      "provincia": "East Blue",
+      "role": "USER",
+      "curso": "Html",
+      "password": "",
+      "token": " XNElzo7NaZMLAqf"
     }
   ],
   "courses": [
     {
-        "id": 1,
-        "cursoNombre": "Angular",
-        "createdAt": "2024-03-03T21:37:51.162Z"
+      "id": "1",
+      "cursoNombre": "Angular",
+      "createdAt": "2024-03-03T21:37:51.162Z"
     }
   ],
   "inscriptions": [
     {
-      "id": 1,
+      "id": "1",
       "userId": "1",
       "courseId": 1
     }

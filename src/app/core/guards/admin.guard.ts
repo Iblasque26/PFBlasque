@@ -4,16 +4,26 @@ import { AuthService } from "../../layouts/auth/auth.service";
 import { Store } from "@ngrx/store";
 import { selectAuthUser } from "../store/auth/selectors";
 import { map } from "rxjs";
-
+import { Observable } from "rxjs";
+import { tap } from "rxjs/operators";
+import { AlertsService } from "../services/alerts.service";
 
 export const adminGuard: CanActivateFn = (route, state) => {
+    const alert = inject(AlertsService)
     const router = inject(Router);
     const authService = inject(AuthService);
     const store = inject(Store);
 
     return store.select(selectAuthUser).pipe(
         map((user) => {
-            return user?.role === 'ADMIN' ? true : router.createUrlTree(['Dashboard', 'Home'])
-        })
-    )
-}
+            if (user?.role === 'ADMIN') {
+                return true;
+            } else if (user?.role === 'USER') {
+                alert.showError('No tienes permisos para ingresar a este sitio');
+                return false; 
+            } else {
+                return router.createUrlTree(['Dashboard', 'Home']);
+            }
+        }),
+    );
+};

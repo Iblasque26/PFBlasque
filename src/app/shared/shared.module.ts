@@ -14,6 +14,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { ValidationErrorsPipe } from './validation-errors.pipe';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -29,6 +30,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatIconModule,
         MatButtonModule,
         MatDialogModule,
+        MatSelectModule,
         MatFormFieldModule,
         MatInputModule,
         ReactiveFormsModule,
