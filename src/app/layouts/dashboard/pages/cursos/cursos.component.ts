@@ -29,18 +29,20 @@ export class CursosComponent {
     })
   }
   onEdit(curso: Curso) {
+  if (curso.id !== undefined) {
     this.dialog.open(CursoDialogComponent, {
-      data:curso,
+      data: curso,
     }).afterClosed().subscribe({
       next: (cursos) => {
         if (cursos) {
-          this.cursosService.updateCursoById(curso.id, cursos).subscribe({
+          this.cursosService.updateCursoById(curso.id as number, cursos).subscribe({
             next: (cursos) => (this.cursos = cursos),
           });
         }
       },
     });
   }
+}
 
   onCreate(): void {
   this.dialog

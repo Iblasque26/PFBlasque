@@ -43,13 +43,24 @@
       "curso": "Html",
       "password": "",
       "token": " XNElzo7NaZMLAqf"
+    },
+    {
+      "id": "764a",
+      "nombre": "Artorias",
+      "apellido": "Abyss",
+      "mail": "darksouls@gmail.com",
+      "provincia": "Bosque Real",
+      "role": "USER",
+      "curso": "Html",
+      "password": "",
+      "token": " 4xOuYphHEUYEI0f"
     }
   ],
   "courses": [
     {
-      "id": "1",
       "cursoNombre": "Angular",
-      "createdAt": "2024-03-03T21:37:51.162Z"
+      "createdAt": "2024-03-03T21:37:51.162Z",
+      "id": "1"
     },
     {
       "id": 2,
@@ -112,6 +123,11 @@
       "id": "3607",
       "courseId": "c5f6",
       "userId": "2"
+    },
+    {
+      "id": "c426",
+      "courseId": "cb15",
+      "userId": "764a"
     }
   ]
 }

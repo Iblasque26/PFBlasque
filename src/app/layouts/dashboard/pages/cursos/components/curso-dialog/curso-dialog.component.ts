@@ -1,5 +1,5 @@
 import { Component, Inject, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 import { Curso } from '../../models';
 import { MatButton } from '@angular/material/button';
@@ -24,8 +24,8 @@ export class CursoDialogComponent {
     @Inject(MAT_DIALOG_DATA) private editingCurso?: Curso
   ) {
     this.cursoForm = this.fb.group({
-      cursoNombre: this.fb.control(''),
-      createdAt: this.fb.control(''),
+      cursoNombre: this.fb.control('', [Validators.required]),
+      createdAt: this.fb.control('', [Validators.required]),
     });
 
     if (editingCurso) {

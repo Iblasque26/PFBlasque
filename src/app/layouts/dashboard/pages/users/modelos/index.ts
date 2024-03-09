@@ -4,7 +4,6 @@ export interface User {
     apellido: string;
     mail: string;
     provincia: string;
-    curso: string[];
     password: string;
     role: string;
     token: string;

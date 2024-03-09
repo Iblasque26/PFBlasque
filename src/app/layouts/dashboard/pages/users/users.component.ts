@@ -23,7 +23,7 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 })
 export class UsersComponent implements OnInit {
   cursos = ['Angular', 'Js', 'Html', 'React'];
-  displayedColumns: string[] = ['id', 'nombreCompleto', 'mail', 'provincia', 'curso', 'rol', 'acciones'];
+  displayedColumns: string[] = ['id', 'nombreCompleto', 'mail', 'provincia', 'rol', 'acciones'];
   dataSource: User[] = [];
   roles: string[] = [];
 

@@ -33,7 +33,6 @@ export class AbmDialogComponent {
       mail: [this.user?.mail || '', [Validators.required, Validators.email]],
       provincia: [this.user?.provincia || ''],
       rol: [this.user?.role], 
-      curso: [this.user?.curso || []],
     });
   }
 
@@ -53,7 +52,6 @@ export class AbmDialogComponent {
         mail: formValue.mail,
         provincia: formValue.provincia,
         role: formValue.rol,
-        curso: formValue.curso, 
         password: '',
         token: '',
       };

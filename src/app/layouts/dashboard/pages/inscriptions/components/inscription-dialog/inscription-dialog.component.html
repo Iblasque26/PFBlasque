@@ -21,5 +21,5 @@
 </div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancelar</button>
-    <button mat-button (click)="onSubmit()">Guardar</button>
+    <button mat-button (click)="onSubmit()" [disabled]="inscriptionForm.invalid">Guardar</button>
 </div>

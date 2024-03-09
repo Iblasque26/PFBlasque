@@ -21,8 +21,8 @@ export class InscriptionDialogComponent {
 
   constructor(private store: Store, private formBuilder: FormBuilder, private matDialogRef: MatDialogRef<InscriptionDialogComponent>) {
 this.inscriptionForm = this.formBuilder.group({
-  courseId: this.formBuilder.control('', Validators.required),
-  userId: this.formBuilder.control('', Validators.required),
+  courseId: this.formBuilder.control('', [Validators.required]),
+  userId: this.formBuilder.control('', [Validators.required]),
 })
 
     this.store.dispatch(InscriptionsActions.loadUsuarios());
