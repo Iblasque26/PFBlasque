@@ -4,8 +4,6 @@ import { AuthService } from "../../layouts/auth/auth.service";
 import { Store } from "@ngrx/store";
 import { selectAuthUser } from "../store/auth/selectors";
 import { map } from "rxjs";
-import { Observable } from "rxjs";
-import { tap } from "rxjs/operators";
 import { AlertsService } from "../services/alerts.service";
 
 export const adminGuard: CanActivateFn = (route, state) => {

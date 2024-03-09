@@ -1,7 +1,8 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
-import { Inscription } from '../models';
+import { Inscription, createInscriptionData } from '../models';
 import { User } from '../../users/modelos';
 import { Curso } from '../../cursos/models';
+
 
 export const InscriptionsActions = createActionGroup({
   source: 'Inscriptions',
@@ -15,6 +16,9 @@ export const InscriptionsActions = createActionGroup({
     'Load Cursos': emptyProps(),
     'Load Cursos Success': props<{data: Curso[]}>(),
     'Load Cursos Failure': props<{error: unknown}>(),
+    'Create Inscription': props<{ data: createInscriptionData}>(),
+    'Create Inscription Success': props<{data: Inscription}>(),
+    'Create Inscription Failure': props<{error: unknown}>(),
 
   }
 });

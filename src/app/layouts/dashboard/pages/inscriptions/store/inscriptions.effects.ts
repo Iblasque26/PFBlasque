@@ -41,14 +41,32 @@ export class InscriptionsEffects {
       concatMap(() => {
         return this.cursosService.getCursos().pipe(
           map((resp) => InscriptionsActions.loadCursosSuccess({ data: resp })),
-          catchError((error) => 
-             of(InscriptionsActions.loadCursosFailure({ error }))
+          catchError((error) =>
+            of(InscriptionsActions.loadCursosFailure({ error }))
           )
         )
       })
     )
-  })
+  });
 
+  createInscription$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(InscriptionsActions.createInscription),
+      concatMap((action) => {
+        return this.inscriptionsService.createInscription(action.data).pipe(
+          map((resp) => InscriptionsActions.createInscriptionSuccess({data : resp})),
+          catchError((error) => of(InscriptionsActions.createInscriptionFailure({error})))
+        )
+      })
+    )
+  });
+
+  createInscriptionSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(InscriptionsActions.createInscriptionSuccess),
+      map(() => InscriptionsActions.loadInscriptions())
+    );
+  });
 
   constructor(private actions$: Actions, private inscriptionsService: InscriptionsService, private usersService: UsersService, private cursosService: CursosService) { }
 }

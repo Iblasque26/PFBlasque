@@ -50,13 +50,53 @@
       "id": "1",
       "cursoNombre": "Angular",
       "createdAt": "2024-03-03T21:37:51.162Z"
+    },
+    {
+      "id": 2,
+      "cursoNombre": "Js",
+      "createdAt": "2024-03-03T21:37:51.162Z"
+    },
+    {
+      "id": 3,
+      "cursoNombre": "React",
+      "createdAt": "2024-03-03T21:37:51.162Z"
+    },
+    {
+      "id": 4,
+      "cursoNombre": "Html",
+      "createdAt": "2024-03-03T21:37:51.162Z"
+    },
+    {
+      "id": "c5f6",
+      "cursoNombre": "Youtube",
+      "createdAt": "2024-03-19T03:00:00.000Z"
     }
   ],
   "inscriptions": [
     {
-      "id": "1",
-      "userId": "1",
-      "courseId": 1
+      "id": "4d67",
+      "courseId": 3,
+      "userId": "96e9"
+    },
+    {
+      "id": "adbd",
+      "courseId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "a4c6",
+      "courseId": 3,
+      "userId": "96e9"
+    },
+    {
+      "id": "be6a",
+      "courseId": null,
+      "userId": "96e9"
+    },
+    {
+      "id": "bb99",
+      "courseId": "c5f6",
+      "userId": "96e9"
     }
   ]
 }

@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { Curso } from "./models";
-import { delay, of } from "rxjs";
+import { delay, mergeMap, of } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http"
+import { enviroment } from "../../../../../enviroments/enviroments";
 
 let cursos: Curso[] = [
     {
@@ -27,23 +29,30 @@ let cursos: Curso[] = [
 
 @Injectable()
 export class CursosService {
+    constructor(private httpClient: HttpClient) { }
 
     getCursos() {
-        return of(cursos).pipe(delay(1500));
+        return this.httpClient.get<Curso[]>(`${enviroment.apiURL}/courses`).pipe(delay(1500));
     }
 
-    createCurso(data: Curso) {
-        cursos = [...cursos, { ...data, id: cursos.length + 1}];
-        return this.getCursos();
+    createCurso(payload: Curso) {
+        return this.httpClient.post<Curso>(`${enviroment.apiURL}/courses`, { ...payload }).pipe(
+            mergeMap(() => this.getCursos())
+        )
+
     }
 
     deleteCursoById(id: number) {
-        cursos = cursos.filter((el) => el.id != id);;
-        return this.getCursos();
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        return this.httpClient.delete<Curso>(`${enviroment.apiURL}/courses/${id}`, { headers }).pipe(
+            mergeMap(() => this.getCursos())
+        );
     }
 
-    updateCursoById( id: number, data: Curso) {
-        cursos = cursos.map((el) => (el.id === id ? { ...el, ...data} : el));
-        return this.getCursos();
+    updateCursoById(id: number, data: Curso) {
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        return this.httpClient.put<Curso>(`${enviroment.apiURL}/courses/${id}`, { ...data }, { headers }).pipe(
+            mergeMap(() => this.getCursos())
+        );
     }
 }
