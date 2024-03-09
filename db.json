@@ -70,6 +70,16 @@
       "id": "c5f6",
       "cursoNombre": "Youtube",
       "createdAt": "2024-03-19T03:00:00.000Z"
+    },
+    {
+      "id": "cb15",
+      "cursoNombre": "LinkedIn",
+      "createdAt": "2024-04-19T03:00:00.000Z"
+    },
+    {
+      "id": "e4e6",
+      "cursoNombre": "Facebook",
+      "createdAt": "2024-03-12T03:00:00.000Z"
     }
   ],
   "inscriptions": [
@@ -89,14 +99,19 @@
       "userId": "96e9"
     },
     {
-      "id": "be6a",
-      "courseId": null,
-      "userId": "96e9"
-    },
-    {
       "id": "bb99",
       "courseId": "c5f6",
       "userId": "96e9"
+    },
+    {
+      "id": "6c5b",
+      "courseId": 3,
+      "userId": "2"
+    },
+    {
+      "id": "3607",
+      "courseId": "c5f6",
+      "userId": "2"
     }
   ]
 }

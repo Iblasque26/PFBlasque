@@ -4,29 +4,6 @@ import { delay, mergeMap, of } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { enviroment } from "../../../../../enviroments/enviroments";
 
-let cursos: Curso[] = [
-    {
-        id: 1,
-        cursoNombre: 'Angular',
-        createdAt: new Date(),
-    },
-    {
-        id: 2,
-        cursoNombre: 'Js',
-        createdAt: new Date(),
-    },
-    {
-        id: 3,
-        cursoNombre: 'React',
-        createdAt: new Date(),
-    },
-    {
-        id: 4,
-        cursoNombre: 'Html',
-        createdAt: new Date(),
-    },
-];
-
 @Injectable()
 export class CursosService {
     constructor(private httpClient: HttpClient) { }

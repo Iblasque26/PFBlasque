@@ -24,7 +24,7 @@ export class CursoDialogComponent {
     @Inject(MAT_DIALOG_DATA) private editingCurso?: Curso
   ) {
     this.cursoForm = this.fb.group({
-      name: this.fb.control(''),
+      cursoNombre: this.fb.control(''),
       createdAt: this.fb.control(''),
     });
 

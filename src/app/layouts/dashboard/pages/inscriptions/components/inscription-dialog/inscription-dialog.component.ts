@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from '../../../users/modelos';
 import { selectInscriptionCurso, selectInscriptionUser } from '../../store/inscriptions.selectors';
 import { Curso } from '../../../cursos/models';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -21,8 +21,8 @@ export class InscriptionDialogComponent {
 
   constructor(private store: Store, private formBuilder: FormBuilder, private matDialogRef: MatDialogRef<InscriptionDialogComponent>) {
 this.inscriptionForm = this.formBuilder.group({
-  courseId: this.formBuilder.control(''),
-  userId: this.formBuilder.control(''),
+  courseId: this.formBuilder.control('', Validators.required),
+  userId: this.formBuilder.control('', Validators.required),
 })
 
     this.store.dispatch(InscriptionsActions.loadUsuarios());

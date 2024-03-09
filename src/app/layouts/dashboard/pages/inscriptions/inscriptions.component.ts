@@ -5,6 +5,7 @@ import { InscriptionsActions } from './store/inscriptions.actions';
 import { selectInscriptions } from './store/inscriptions.selectors';
 import { MatDialog } from '@angular/material/dialog';
 import { InscriptionDialogComponent } from './components/inscription-dialog/inscription-dialog.component';
+import { Inscription } from './models';
 
 @Component({
   selector: 'app-inscriptions',
@@ -13,10 +14,16 @@ import { InscriptionDialogComponent } from './components/inscription-dialog/insc
 })
 export class InscriptionsComponent {
 inscriptions$: any;
+displayedColumns = ["user", "course"]
+inscripciones: Inscription[] = [];
 
-constructor(private store: Store, private matDialog: MatDialog) {
-  this.inscriptions$ = this.store.select(selectInscriptions);
-  this.store.dispatch(InscriptionsActions.loadInscriptions())
+constructor(private store: Store, private matDialog: MatDialog, private inscriptionsService: InscriptionsService) {
+  this.store.dispatch(InscriptionsActions.loadInscriptions());
+  this.inscriptionsService.getInscriptions().subscribe({
+    next: (inscriptions) => {
+      this.inscriptions$ = inscriptions;
+    }
+  });
 }
 
 createInscription(): void {
